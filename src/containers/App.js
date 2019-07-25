@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import CardList from './CardList';
-import SearchBox from './SearchBox';
-import ScrollBar from './ScrollBar';
+import CardList from '../components/CardList';
+import SearchBox from '../components/SearchBox';
+import ScrollBar from '../components/ScrollBar';
 //import {robots} from './robots';
 import './App.css';
 
@@ -23,7 +23,7 @@ class App extends Component {
       );
   }
   render() {
-    const filterRobot = this.state.robots.filter(robot =>{
+    const filterRobot = this.state.robots.filter(robot => {
       return robot.name.toLowerCase().includes(this.state.searchField.toLowerCase());
     });
     return (
@@ -31,7 +31,7 @@ class App extends Component {
         <h1 className='f1'>Robofriend Web App</h1>
         <SearchBox searchChange={this.onSearchChange} />
         <ScrollBar >
-        <CardList robots={filterRobot} />
+          <CardList robots={filterRobot} />
         </ScrollBar>
       </div>
     );
